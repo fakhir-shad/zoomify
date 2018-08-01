@@ -1,3 +1,5 @@
+*.gem
+/bin
 /.bundle/
 /.yardoc
 /_yardoc/

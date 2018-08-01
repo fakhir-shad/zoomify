@@ -2,23 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e41be716-ba37-4817-b252-8d87b4029395" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CODE_OF_CONDUCT.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LICENSE.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Rakefile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/console" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/setup" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/zoomify.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/zoomify/client.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/zoomify/error.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/zoomify/request.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/zoomify/resources/cloud_recording.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/zoomify/resources/user.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/zoomify/resources/webinar.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/zoomify/version.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zoomify.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zoomify.gemspec" afterPath="$PROJECT_DIR$/zoomify.gemspec" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,7 +19,17 @@
         <entry file="file://$PROJECT_DIR$/zoomify.gemspec">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="182">
-              <caret line="13" column="77" lean-forward="false" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="77" />
+              <caret line="13" column="62" lean-forward="false" selection-start-line="13" selection-start-column="62" selection-end-line="13" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="14">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -69,7 +65,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="version.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="version.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/zoomify/version.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="42">
@@ -132,7 +128,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/zoomify.gemspec" />
         <option value="$PROJECT_DIR$/lib/zoomify.rb" />
         <option value="$PROJECT_DIR$/lib/zoomify/error.rb" />
         <option value="$PROJECT_DIR$/lib/zoomify/request.rb" />
@@ -141,6 +136,8 @@
         <option value="$PROJECT_DIR$/lib/zoomify/client.rb" />
         <option value="$PROJECT_DIR$/lib/zoomify/resources/user.rb" />
         <option value="$PROJECT_DIR$/lib/zoomify/version.rb" />
+        <option value="$PROJECT_DIR$/zoomify.gemspec" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -224,12 +221,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1533107702778</updated>
-      <workItem from="1533107704057" duration="2380000" />
+      <workItem from="1533107704057" duration="4130000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2380000" />
+    <option name="totallyTimeSpent" value="4130000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="37" y="-4" width="1883" height="1084" extended-state="6" />
@@ -322,18 +319,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zoomify.gemspec">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="13" column="77" lean-forward="false" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/zoomify/version.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zoomify.gemspec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="13" column="62" lean-forward="false" selection-start-line="13" selection-start-column="62" selection-end-line="13" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
