@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    zoomify (0.1.2.alpha)
+    zoomify (0.1.5.alpha)
 
 GEM
   remote: https://rubygems.org/
