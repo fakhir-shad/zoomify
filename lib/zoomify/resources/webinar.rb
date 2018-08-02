@@ -26,7 +26,7 @@ module Zoomify
       private
         def webinar_extract_params_and_raise_id_email_exceptions *args
           params = Request.extract_params(args)
-          Request.raise_user_id_error(params)
+          Request.raise_user_id_email_error(params)
         end
 
         def webinar_method_options params
