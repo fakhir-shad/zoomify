@@ -5,7 +5,7 @@ module Zoomify
   class Client
 
     include HTTParty
-    debug_output $stdout
+    # debug_output $stdout
     include Resources::User
     include Resources::Webinar
     include Resources::CloudRecording
