@@ -7,7 +7,7 @@ module Zoomify
           self.class.send(user_method_without_id_options[method.to_sym], '/users', params)
         end
       end
-      %w(user user_update user_delete user_assistants user_assistants_create user_assistants_delete_all user_schedulers user_schedulers_delete_all).each do |method|
+      %w(user user_update user_delete user_assistants user_assistants_create user_assistants_delete_all user_schedulers user_schedulers_delete_all user_settings user_settings_update user_status_update user_password_update user_permissions user_token user_token_delete).each do |method|
         define_method method do |*args|
           params = Request.extract_params_and_manage_user_id_error *args
           method_option = user_method_with_id_options(params)[method.to_sym]
@@ -20,6 +20,21 @@ module Zoomify
           method_option = user_method_with_multiple_id_options(params)[method.to_sym]
           (raise Request.argument_error "User and #{method.split('_')[1].singularize.capitalize} Id") if method_option[:condition]
           self.class.fire_delete(method_option[:url], params)
+        end
+      end
+
+      def upload_picture *args
+        params = Request.extract_params_and_manage_user_id_error *args
+        (raise Request.argument_error "pic_file") if params[:pic_file].blank?
+        self.class.fire_post("/users/#{Request.extract_id_from_params(params)}/picture", params)
+      end
+
+      %w(verify_zpk verify_email verify_vanity_name).each do |method|
+        define_method method do |*args|
+          params = Request.extract_params args
+          event = method.split('_').drop(1).join('_')
+          (raise Request.argument_error "#{event}") if params[event.to_sym].blank?
+          self.class.fire_get("/users/#{event}", params)
         end
       end
 
@@ -61,6 +76,34 @@ module Zoomify
                   request: 'delete',
                   url: "/users/#{Request.extract_id_from_params(params)}/schedulers"
               },
+              user_settings: {
+                  request: 'get',
+                  url: "/users/#{user_id}/settings"
+              },
+              user_settings_update: {
+                  request: 'patch',
+                  url: "/users/#{user_id}/settings"
+              },
+              user_status_update: {
+                  request: 'put',
+                  url: "/users/#{user_id}/status",
+              },
+              user_password_update: {
+                  request: 'put',
+                  url: "/users/#{user_id}/password"
+              },
+              user_permissions: {
+                  request: 'get',
+                  url: "/users/#{user_id}/permissions"
+              },
+              user_token: {
+                  request: 'get',
+                  url: "/users/#{user_id}/token"
+              },
+              user_token_delete: {
+                  request: 'delete',
+                  url: "/users/#{user_id}/token"
+              }
 
           }
         end
