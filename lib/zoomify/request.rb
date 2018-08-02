@@ -28,7 +28,8 @@ module Zoomify
               Request.build_object(404, 'Content Not Found!')
             }
           when 401
-            Zoomify::Client.headers(Request.headers) && eval("Zoomify::Client.#{method_name}(url, args)")
+            parsed_response = response.parsed_response
+            parsed_response['message'].include?('expire') ? (Zoomify::Client.headers(Request.headers) && Zoomify::Client.send(method_name,url, args)) : OpenStruct.new(parsed_response)
           else
             Request.extract_response_vs_object(response){
               Request.build_object(response.code, 'Invalid Response!')
@@ -60,11 +61,28 @@ module Zoomify
           yield
         end
       end
-      def raise_user_id_error params
+      def extract_params_and_manage_user_id_error *args
+        params = Request.extract_params(args)
+        Request.raise_user_id_email_error params
+        params
+      end
+      def raise_user_id_email_error params
         (raise Request.argument_error "User's id or email") if params[:id].blank? && params[:email].blank?
       end
       def raise_meeting_id_error params
         (raise Request.argument_error "Meeting id or uuid") if params[:id].blank? && params[:uuid].blank?
+      end
+      def extract_params_and_manage_id_error *args
+        params = Request.extract_params(args)
+        params[:id].blank? ? (raise Request.argument_error "id") : params
+      end
+      def raise_from_to_error params
+        (raise Request.argument_error "from and to") if (params[:from].blank? || params[:to].blank?)
+      end
+      def retrieve_params_and_manage_from_to_error *args
+        params = Request.extract_params args
+        Request.raise_from_to_error params
+        params
       end
     end
   end

@@ -5,10 +5,22 @@ module Zoomify
   class Client
 
     include HTTParty
-    # debug_output $stdout
+    debug_output $stdout
     include Resources::User
     include Resources::Webinar
     include Resources::CloudRecording
+    include Resources::Account
+    include Resources::Billing
+    include Resources::Meeting
+    include Resources::Group
+    include Resources::ImGroup
+    include Resources::ImChat
+    include Resources::Report
+    include Resources::Dashboard
+    include Resources::Webhooks
+    include Resources::Tsp
+    include Resources::Pac
+    include Resources::Device
 
     base_uri 'https://api.zoom.us/v2/'
 
@@ -36,16 +48,16 @@ module Zoomify
       end
 
       private
-      def cater_exception fire, url, args, query
-        begin
-          args.reject!{ |arg| arg['id'] }
-          params = query ? {query: args} : {body: args.to_json}
-          response = send(fire.split('_')[1], url, params)
-          Request.extract_errors response, fire, url, args
-        rescue Net::OpenTimeout, Net::ReadTimeout, Timeout::Error => e
-          raise ::Zoomify::TimeoutError.new(e.message)
+        def cater_exception fire, url, args, query
+          begin
+            args.reject!{ |arg| arg['id'] }
+            params = query ? {query: args} : {body: args.to_json}
+            response = send(fire.split('_')[1], url, params)
+            Request.extract_errors response, fire, url, args
+          rescue Net::OpenTimeout, Net::ReadTimeout, Timeout::Error => e
+            raise ::Zoomify::TimeoutError.new(e.message)
+          end
         end
-      end
     end
   end
 end
