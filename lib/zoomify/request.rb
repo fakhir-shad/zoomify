@@ -55,7 +55,7 @@ module Zoomify
       def extract_response_vs_object response
         parsed_response = response.parsed_response
         unless parsed_response.blank?
-          hash = response.kind_of?(Hash) ? parsed_response : JSON.parse(parsed_response)
+          hash = parsed_response.kind_of?(Hash) ? parsed_response : JSON.parse(parsed_response)
           OpenStruct.new(hash)
         else
           yield
