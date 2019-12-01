@@ -78,31 +78,31 @@ module Zoomify
               },
               user_settings: {
                   request: 'get',
-                  url: "/users/#{user_id}/settings"
+                  url: "/users/#{Request.extract_id_from_params(params)}/settings"
               },
               user_settings_update: {
                   request: 'patch',
-                  url: "/users/#{user_id}/settings"
+                  url: "/users/#{Request.extract_id_from_params(params)}/settings"
               },
               user_status_update: {
                   request: 'put',
-                  url: "/users/#{user_id}/status",
+                  url: "/users/#{Request.extract_id_from_params(params)}/status",
               },
               user_password_update: {
                   request: 'put',
-                  url: "/users/#{user_id}/password"
+                  url: "/users/#{Request.extract_id_from_params(params)}/password"
               },
               user_permissions: {
                   request: 'get',
-                  url: "/users/#{user_id}/permissions"
+                  url: "/users/#{Request.extract_id_from_params(params)}/permissions"
               },
               user_token: {
                   request: 'get',
-                  url: "/users/#{user_id}/token"
+                  url: "/users/#{Request.extract_id_from_params(params)}/token"
               },
               user_token_delete: {
                   request: 'delete',
-                  url: "/users/#{user_id}/token"
+                  url: "/users/#{Request.extract_id_from_params(params)}/token"
               }
 
           }
